@@ -293,7 +293,7 @@ const Features = () => {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e45619] to-[#dd6c1c]">Automated Trading and Investment Tools</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e45619] to-[#dd6c1c]">Agentic AI Automated Trader</span>
           </motion.h3>
           <div className="grid grid-cols-1 gap-4">
               {tradingInvestingTools.map((feature, index) => (
