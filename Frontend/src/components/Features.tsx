@@ -90,6 +90,29 @@ const Features = () => {
     }
   ];
 
+  const tradingInvestingTools = [
+    {
+        icon: Zap,
+        title: "Real-time Trading Data",
+        description: "Fetches real-time intra day trading data through the yfinance API."
+    },
+    {
+        icon: BarChart3,
+        title: "Pre/Post Trading Day Analysis",
+        description: "Provides pre-trading day and post-trading day analysis through candlestick charts."
+    },
+    {
+        icon: Shield,
+        title: "Multi-Agentic Framework",
+        description: "Utilizes a multi-agentic framework trained with robust financial strategies and advanced analytics to reduce risk and increase profit."
+    },
+    {
+        icon: PieChart,
+        title: "Analytics Dashboard",
+        description: "Offers an analytics dashboard with real-time analysis and logs of trades (buy, sold, or hold), a profit and loss chart, win rate, and more."
+    }
+  ];
+
   const FeatureCard = ({ icon: Icon, title, description, index }: { icon: any, title: string, description: string, index: number }) => (
     <motion.div 
       className="group bg-charcoal-900/80 backdrop-blur-sm p-6 rounded-xl border border-electric-blue-500/30 hover:border-electric-blue-500/60 transition-all duration-100 hover:transform hover:scale-105 hover:rotate-1 shadow-glow-md hover:shadow-electric-blue animate-fadeInUp opacity-0"
@@ -142,7 +165,7 @@ const Features = () => {
   <span className="text-[#00FF88] drop-shadow-[0_0_7px_#00FF88]">FINBUZZ.AI</span>
 </h2>
 <p className="text-xl text-transparent bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text max-w-3xl mx-auto">
-          Revolutionizing financial services with cutting-edge AI technology and comprehensive analytical tools
+          Revolutionizing financial services with cutting-edge AI technology and comprehensive analytical tools.
           </p>
         </motion.div>
 
@@ -260,6 +283,44 @@ const Features = () => {
 </div>
 
         </div>
+
+        {/* Automated Trading and Investment Tools */}
+        <div className="mt-16">
+          <motion.h3 
+            className="text-3xl font-bold mb-8 text-center"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e45619] to-[#dd6c1c]">Automated Trading and Investment Tools</span>
+          </motion.h3>
+          <div className="grid grid-cols-1 gap-4">
+              {tradingInvestingTools.map((feature, index) => (
+                  <motion.div 
+                      key={index} 
+                      className="relative group overflow-hidden bg-gradient-to-br from-space-blue-900/40 via-space-blue-950/60 to-deep-black/80 backdrop-blur-md p-4 rounded-xl border border-gray-700 h-auto min-h-24 transition-transform duration-100 hover:scale-105 hover:border-electric-blue-400 cursor-pointer"
+                      initial={{ opacity: 0, y: 50 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.2 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      whileHover={{ scale: 1.05, transition: { duration: 0.1 } }}
+                  >
+                      <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,rgba(109,40,217,0.5)_0%,transparent_70%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+                      <div className="relative z-10 flex items-start space-x-3 h-full">
+                          <div className="w-8 h-8 bg-gradient-to-r from-electric-blue-500/30 to-deep-purple-600/30 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                              <feature.icon className="w-4 h-4 text-[#e45619] rounded-full animate-pulse group-hover:text-[#dd6c1c] transition-colors duration-300" />
+                          </div>
+                          <div className="flex-1">
+                              <h4 className="text-base font-semibold text-text-primary mb-2 leading-tight">{feature.title}</h4>
+                              <p className="text-text-muted text-sm leading-relaxed">{feature.description}</p>
+                          </div>
+                      </div>
+                  </motion.div>
+              ))}
+          </div>
+        </div>
+        
       </div>
     </motion.section>
   );
