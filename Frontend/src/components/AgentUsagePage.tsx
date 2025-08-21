@@ -19,19 +19,19 @@ const AgentUsagePage = ({ onGoBack }) => {
   const imageContainerStyle = "flex items-center justify-center overflow-hidden";
   
   // Handler to open the specified URL
-  const handleLaunchClick = () => {
-    window.open('https://huggingface.co/spaces/Pawan2605/FINBUZZ', '_blank');
+  const handleLaunchClick = (url) => {
+    window.open(url, '_blank');
   };
 
   return (
     <div className="min-h-screen bg-black text-white relative p-4 sm:p-8 font-sans backdrop-filter backdrop-blur-3xl"
-        style={{ 
-          backgroundImage: 'radial-gradient(ellipse at 50% -20%, rgba(0, 0, 139, 0.3), transparent 80%)',
-        }}>
+      style={{
+        backgroundImage: 'radial-gradient(ellipse at 50% -20%, rgba(0, 0, 139, 0.3), transparent 80%)',
+      }}>
 
       {/* Back button, renamed to FINBUZZ.AI */}
-      <button 
-        onClick={onGoBack} 
+      <button
+        onClick={onGoBack}
         className="absolute top-4 left-12 flex items-center gap-2 text-[#00FF88] font-bold text-3xl hover:underline transition-colors"
       >
         <img src="/assets/Logo.png" alt="FINBUZZ.AI Logo" className="w-8 h-8" />
@@ -197,7 +197,7 @@ const AgentUsagePage = ({ onGoBack }) => {
         </div>
         <div className={stepBoxStyle}>
           <p className="text-lg">
-            While the full suite of tools within the Financial Analytics and Investment Tools tab is still in development, you can see the implementation of two of the most useful and widely-used tools, including the <span className="font-bold">Stock Sentiment Analysis and Forecasting Tool</span>, in the image below.
+            The Financial Analytics and Investment Banking agent is a sophisticated suite of tools that offers <span className="font-bold">market sentiment analysis, advanced financial modeling, market depth research, and robust capabilities</span>for analyzing company market statistics, valuations, and IPOs. Check the image below.
           </p>
         </div>
         <div className="mb-12">
@@ -240,30 +240,49 @@ const AgentUsagePage = ({ onGoBack }) => {
         <div className={tabBoxStyle}>
           <Bot size={48} className={iconStyle} />
           <h2 className="text-3xl font-bold text-orange-500 mb-0">
-            Tab 4 - Automated Stock Trading & Investing Agent
+            Agentic AI for Automated Stock Trading & Investing
           </h2>
         </div>
         <div className={stepBoxStyle}>
           <p className="text-lg">
-            As this is a prototype, the AI automated stock trading agent is currently in development and will be launching soon.
+            Our Agentic AI Automated Trading agent autonomously uses real-time market data and embedded strategies to streamline your intraday trading-simply input your amount, launch the agent from the "AI Agent Trading" tab, and then view your performance metrics like P&L, win rate, and portfolio value in the "AI Analytics" tab. Refer image below.
           </p>
+        </div>
+        {/* Placeholder images */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 place-items-center">
+          <div className={`${imageContainerStyle} h-96 w-96`}>
+            <img src="/assets/Tab4image1.png" alt="Placeholder image 1" className={imageStyle} />
+          </div>
+          <div className={`${imageContainerStyle} h-80 w-80`}>
+            <img src="/assets/Traderimage.png" alt="Placeholder image 2" className={imageStyle} />
+          </div>
+          <div className={`${imageContainerStyle} h-96 w-96`}>
+            <img src="/assets/Traderimage2.png" alt="Placeholder image 3" className={imageStyle} />
+          </div>
         </div>
       </motion.div>
 
-      {/* New button to launch FINBUZZ.AI */}
-      <div className="flex justify-center mt-12 mb-12">
+      {/* New buttons */}
+      <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mt-12 mb-12">
         <button
-          className="bg-gradient-to-r from-[#e45619] to-[#dd6c1c] text-white px-16 py-5 rounded-2xl text-2xl font-bold transition-all duration-500 transform hover:scale-110 group relative overflow-hidden shadow-lg hover:shadow-2xl"
-          onClick={handleLaunchClick}
+          className="bg-gradient-to-r from-[#e45619] to-[#ee7722] text-white px-8 py-3 rounded-2xl text-lg font-bold transition-all duration-500 transform hover:scale-110 group relative overflow-hidden shadow-lg hover:shadow-2xl w-full sm:w-auto"
+          onClick={() => handleLaunchClick('https://huggingface.co/spaces/Pawan2605/FINBUZZ.AI_CHAT_AGENT')}
         >
-          <span className="relative z-10 group-hover:animate-pulse font-bold">LAUNCH FINBUZZ.AI</span>
-          <div className="absolute inset-0 bg-[#dd6c1c]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <span className="relative z-10 group-hover:animate-pulse font-bold">FINBUZZ.AI Chat Agent</span>
+          <div className="absolute inset-0 bg-[#ff4500]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </button>
+        <button
+          className="bg-gradient-to-r from-[#3fb33f] to-[#0b9d4a] text-white px-8 py-3 rounded-2xl text-lg font-bold transition-all duration-500 transform hover:scale-110 group relative overflow-hidden shadow-lg hover:shadow-2xl w-full sm:w-auto"
+          onClick={() => handleLaunchClick('https://huggingface.co/spaces/Pawan2605/FINBUZZ.AI_TRADING_AGENT')}
+        >
+          <span className="relative z-10 group-hover:animate-pulse font-bold">FINBUZZ.AI Trading Agent</span>
+          <div className="absolute inset-0 bg-[#ff4500]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </button>
       </div>
 
       {/* Footer bar */}
       <footer className="bg-black/50 text-white text-center py-4 mt-12 rounded-lg">
-        <p className="text-sm">© 2025 FinBuzz.AI. All rights reserved. | Empowering your financial journey.</p>
+        <p className="text-sm">© 2025 FINBUZZ.AI. All rights reserved. | Empowering your financial journey.</p>
       </footer>
 
     </div>

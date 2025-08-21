@@ -93,8 +93,8 @@ const HowItWorks = () => {
     {
       number: "02",
       icon: Brain,
-      title: "Launch the FINBUZZ.AI Agent",
-      description: "Instantly access the conversational agent by selecting the \"LAUNCH FINBUZZ.AI\" button."
+      title: "Click FINBUZZ.AI Chat / Trading Agent",
+      description: "Instantly access the conversational or trading agent by selecting the \"FINBUZZ.AI Chat / Trading Agent\" button."
     },
     {
       number: "03",

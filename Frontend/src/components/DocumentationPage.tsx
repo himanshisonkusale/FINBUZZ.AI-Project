@@ -27,7 +27,7 @@ const DocumentationPage = ({ onExploreClick }) => {
     },
     {
       icon: <Bot size={48} />,
-      title: "Agentic AI for Automated Stock Trader & Investor",
+      title: "Agentic AI for Automated Stock Trading & Investing",
       description: "This tab empowers users with an agentic AI designed to autonomously manage stock trading and investment strategies.",
       color: "text-[#a04ffc]",
     },
@@ -97,7 +97,7 @@ const DocumentationPage = ({ onExploreClick }) => {
               <div>
                 {/* Tab Number and Orange Subheading */}
                 <h2 className="text-2xl font-semibold text-orange-500 mb-1 drop-shadow-[0_0_5px_#ff7e25]">
-                  Tab {index + 1} : {tab.title}
+                  {index < 3 ? `Tab ${index + 1} : ` : ''}{tab.title}
                 </h2>
                 
                 {/* Description */}
@@ -121,7 +121,7 @@ const DocumentationPage = ({ onExploreClick }) => {
         <button 
           onClick={onExploreClick}
           className="bg-orange-500 text-white px-14 py-5 rounded-xl text-xl font-bold transition-all duration-300 transform hover:scale-110 shadow-lg drop-shadow-[0_0_10px_#ff7e25] hover:drop-shadow-[0_0_25px_#ff7e25]">
-          Explore All Tabs
+          Explore All Features
         </button>
       </motion.div>
       
